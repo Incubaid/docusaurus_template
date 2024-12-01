@@ -48,10 +48,10 @@ jobs:
           pnpm run build
       - name: Set up SSH key
         run: |
-          set -ex
+          #set -ex
           mkdir -p ~/.ssh
           echo "${{ secrets.SSHKEY }}" > ~/.ssh/id_rsa
-          cat ~/.ssh/id_rsa
+          #cat ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/id_rsa
@@ -60,6 +60,4 @@ jobs:
           ssh -o StrictHostKeyChecking=no -T root@info.ourworld.tf || true
       - name: Deploy with rsync
         run: |
-          mkdir -p build
-          touch build/something
           rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
