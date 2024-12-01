@@ -11,15 +11,15 @@ const config: Config = {
   url: 'https://www.ourworld.tf',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/eden/',
+  baseUrl: '/testdocs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'github.com/Incubaid', // Usually your GitHub org/user name.
-  projectName: 'www_eden', // Usually your repo name.
+  organizationName: 'github.com/incubaid', // Usually your GitHub org/user name.
+  projectName: 'www_testdocs', // Usually your repo name.
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -66,7 +66,7 @@ const config: Config = {
         redirects: [
           {
             from: '/',
-            to: '/eden/intro',
+            to: 'https://info.ourworld.tf/testdocs/intro',
           },
         ],
       },
@@ -152,7 +152,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/Incubaid/docs_eden',
+              href: 'https://github.com/incubaid/',
             },
           ],
         },

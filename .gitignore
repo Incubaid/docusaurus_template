@@ -177,3 +177,8 @@ dist
 bun.lockb
 
 build/
+
+
+ pnpm-lock.yaml
+ 
+ 
