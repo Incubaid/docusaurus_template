@@ -1,15 +1,8 @@
-# tfgrid_starter
+# testsite 
 
-To install dependencies:
+just edit the docs in directory 'docs'
 
-```bash
-bun install
-```
+the site will be autobuild on [https://info.ourworld.tf/testdocs](https://info.ourworld.tf/testdocs)
 
-To run:
 
-```bash
-bun run index.ts
-```
 
-This project was created using `bun init` in bun v1.1.38. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

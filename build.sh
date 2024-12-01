@@ -14,4 +14,4 @@ echo "Docs directory: $script_dir"
 #bun ${script_dir}/node_modules/.bin/docusaurus build
 pnpm build
 
-#rsync -rv --delete ${script_dir}/docs_website/build/ root@info.ourworld.tf:/root/hero/www/info/tfgrid_starter/
+#rsync -rv --delete ${script_dir}/docs_website/build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/

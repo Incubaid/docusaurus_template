@@ -3,20 +3,20 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'ThreeFold Docs',
-  tagline: 'Self-Healing Data & Cloud Network',
+  title: 'Docs',
+  tagline: 'Lets build the future together.',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://docs.projectmycelium.io',
+  url: 'https://www.ourworld.tf',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/testdocs/',
+  baseUrl: '/eden/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'git.ourworld.tf/tfgrid', // Usually your GitHub org/user name.
-  projectName: 'www_docs_threefold_io', // Usually your repo name.
+  organizationName: 'github.com/Incubaid', // Usually your GitHub org/user name.
+  projectName: 'www_eden', // Usually your repo name.
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -66,7 +66,7 @@ const config: Config = {
         redirects: [
           {
             from: '/',
-            to: '/intro',
+            to: '/eden/intro',
           },
         ],
       },
@@ -83,7 +83,7 @@ const config: Config = {
     navbar: {
       title: '',
       logo: {
-        alt: 'ThreeFold Logo',
+        alt: 'Logo',
         src: 'img/logo.svg',
         srcDark: 'img/logo.svg', // Use same logo for dark mode
       },
@@ -95,13 +95,8 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          to: '/support',
-          label: 'Support',
-          position: 'left',
-        },
-        {
-          href: 'https://threefold.io',
-          label: 'ThreeFold.io',
+          href: 'https://www.mbweniruinsandgardens.com/',
+          label: 'mbweniruinsandgardens',
           position: 'right',
         },
       ],
@@ -124,73 +119,45 @@ const config: Config = {
               label: 'Roadmap',
               to: '/roadmap',
             },
-            {
-              label: 'Manual',
-              to: 'https://manual.grid.tf/',
-            },
           ],
         },
         {
-          title: 'Features',
+          title: 'More Info',
           items: [
             {
-              label: 'Become a Farmer',
-              to: '/category/become-a-farmer',
-            },
-            {
-              label: 'Tech',
-              to: '/tech',
-            },
-            {
-              label: 'Tokenomics',
-              to: '/tokenomics',
-            },            
+              label: 'Budget',
+              to: '/budget',
+            },          
           ],
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'Telegram',
-              href: 'https://t.me/threefold',
+              label: 'Home',
+              to: '/intro',
             },
             {
-              label: 'X',
-              href: 'https://x.com/threefold_io',
-            },
-            {
-              label: 'Forum',
-              href: 'https://forum.threefold.io',
-            },
-            {
-              label: 'Support',
-              to: '/support',
-            },
+              label: 'Budget',
+              to: '/budget',
+            },            
           ],
         },
         {
           title: 'Links',
           items: [
             {
-              label: 'ThreeFold.io',
-              href: 'https://threefold.io',
-            },
-            {
-              label: 'Dashboard',
-              href: 'https://dashboard.grid.tf',
+              label: 'mbweniruinsandgardens',
+              href: 'https://www.mbweniruinsandgardens.com/',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/threefoldtech/home',
-            },
-            {
-              label: 'Gitea',
-              href: 'https://git.ourworld.tf',
+              href: 'https://github.com/Incubaid/docs_eden',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ThreeFold`,
+      copyright: `Copyright © ${new Date().getFullYear()} Incubaid`,
     },
     prism: {
       theme: prismThemes.dracula,
