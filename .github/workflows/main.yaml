@@ -1,0 +1,57 @@
+name: "Docusaurus 🦖 GitHub Pages"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Check out repo
+        uses: actions/checkout@v4
+      # Node is required for pnpm
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: false
+      # Get pnpm store directory
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      # Setup pnpm cache
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      # Install and build Docusaurus website
+      - name: Build Docusaurus website
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm run build
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSHKEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H your-remote-server.com >> ~/.ssh/known_hosts
+      # - name: Deploy with rsync
+      #   run: |
+      #     rsync -avz -e "ssh -i ~/.ssh/id_rsa" ./build-dir/ user@your-remote-server.com:/remote-dir/
