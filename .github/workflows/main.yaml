@@ -18,34 +18,34 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
       # Node is required for pnpm
-      # - name: Set up Node
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: "20"
-      # # Setup pnpm
-      # - name: Setup pnpm
-      #   uses: pnpm/action-setup@v2
-      #   with:
-      #     version: latest
-      #     run_install: false
-      # # Get pnpm store directory
-      # - name: Get pnpm store directory
-      #   shell: bash
-      #   run: |
-      #     echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      # # Setup pnpm cache
-      # - name: Setup pnpm cache
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ${{ env.STORE_PATH }}
-      #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pnpm-store-
-      # # Install and build Docusaurus website
-      # - name: Build Docusaurus website
-      #   run: |
-      #     pnpm install
-      #     pnpm run build
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: false
+      # Get pnpm store directory
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      # Setup pnpm cache
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      # Install and build Docusaurus website
+      - name: Build Docusaurus website
+        run: |
+          pnpm install
+          pnpm run build
       - name: Set up SSH key
         run: |
           set -ex
