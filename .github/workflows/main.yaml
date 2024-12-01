@@ -46,13 +46,18 @@ jobs:
         run: |
           pnpm install
           pnpm run build
-          find .
       - name: Set up SSH key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSHKEY }}" > ~/.ssh/id_rsa
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          eval $(ssh-agent -s)
+          ssh-add ~/.ssh/id_rsa
           ssh-keyscan -H info.ourworld.tf >> ~/.ssh/known_hosts
+          # Test SSH connection
+          ssh -o StrictHostKeyChecking=no -T root@info.ourworld.tf || true
       - name: Deploy with rsync
         run: |
-          rsync -avz -e "ssh -i ~/.ssh/id_rsa" ./build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
