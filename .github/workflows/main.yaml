@@ -46,6 +46,7 @@ jobs:
         run: |
           pnpm install
           pnpm run build
+          find .
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
