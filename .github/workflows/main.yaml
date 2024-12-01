@@ -52,7 +52,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSHKEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H your-remote-server.com >> ~/.ssh/known_hosts
-      # - name: Deploy with rsync
-      #   run: |
-      #     rsync -avz -e "ssh -i ~/.ssh/id_rsa" ./build-dir/ user@your-remote-server.com:/remote-dir/
+          ssh-keyscan -H info.ourworld.tf >> ~/.ssh/known_hosts
+      - name: Deploy with rsync
+        run: |
+          rsync -avz -e "ssh -i ~/.ssh/id_rsa" ./build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
