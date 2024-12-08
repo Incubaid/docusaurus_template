@@ -20,6 +20,5 @@ echo "Docs directory: $script_dir"
 
 export PATH=${BASE}/node_modules/.bin:$PATH
 
-
-pnpm install @docusaurus/theme-mermaid@3.5.2
+npm install @docusaurus/core@3.6.3 @docusaurus/preset-classic@3.6.3 @docusaurus/theme-mermaid@3.6.3
 pnpm install
