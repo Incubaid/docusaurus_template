@@ -7,11 +7,8 @@ cd "${script_dir}"
 
 export PATH=${BASE}/node_modules/.bin:$PATH
 
-
 echo "Docs directory: $script_dir"
 
-#bun build
-#bun ${script_dir}/node_modules/.bin/docusaurus build
-pnpm build
+bun build
 
-#rsync -rv --delete ${script_dir}/docs_website/build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
+rsync -rv --delete ${script_dir}/build/ root@info.ourworld.tf:/root/hero/www/info/tftech

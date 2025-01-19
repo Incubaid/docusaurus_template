@@ -1,12 +1,37 @@
-# testsite 
+<h1>ThreeFold Tech Website</h1>
 
-just edit the docs in directory 'docs'
+<h2>Table of Contents</h2>
 
-the site will be autobuild on [https://info.ourworld.tf/testdocs](https://info.ourworld.tf/testdocs)
+- [Introduction](#introduction)
+- [Steps](#steps)
+- [URL](#url)
 
+---
 
-## to edit in stackblitz
+## Introduction
 
-> make sure to have an account there, login with github
+This repository contains the code to deploy the ThreeFold Tech website.
 
-https://stackblitz.com/~/github.com/Incubaid/docs_eden
+## Steps
+
+- Install
+    ```
+    bash install.sh
+    ```
+- Run locally
+    ```
+    bash develop.sh
+    ```
+- Push change online to stating website
+    ```
+    bash build-dev.sh
+    ```
+- Push change online to production website
+    ```
+    bash build.sh
+    ```
+
+## URL
+
+- The website in staging mode is at `threefold.info/tftechdev`
+- The website in production mode is at `threefold.info/tftech`

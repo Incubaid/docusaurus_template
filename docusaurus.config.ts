@@ -3,28 +3,16 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Docs',
-  tagline: 'Lets build the future together.',
+  title: 'ThreeFold Tech',
+  tagline: 'Self-Healing Data & Cloud Network',
   favicon: 'img/favicon.png',
 
-  // Set the production url of your site here
-  url: 'https://www.ourworld.tf',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/testdocs/',
+  url: 'https://threefold.info',
+  baseUrl: '/tftech/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'github.com/incubaid', // Usually your GitHub org/user name.
-  projectName: 'www_testdocs', // Usually your repo name.
-  trailingSlash: false,
-
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -36,9 +24,17 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          routeBasePath: '/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -52,40 +48,33 @@ const config: Config = {
   themes: ['@docusaurus/theme-mermaid'],
 
   scripts: [
+    
     {
-      src: '/js/crisp.js',
+      src:
+        '/js/crisp.js',
       async: false,
     },
   ],
 
-  // Add redirect from root to intro
-  plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: '/',
-            to: 'https://info.ourworld.tf/testdocs/intro',
-          },
-        ],
-      },
-    ],
-  ],
-
   themeConfig: {
+
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
-    image: 'img/favicon.png',
+    image: 'img/tf_graph.png',
+  metadata: [
+    { name: 'description', content: 'ThreeFold is laying the foundation for Web4, the next generation of the Internet.' },
+    { property: 'og:image', content: 'https://threefold.info/tftech/img/tf_graph.png' },
+    { property: 'og:description', content: 'ThreeFold is laying the foundation for Web4, the next generation of the Internet.' },
+    { property: 'og:title', content: 'Introduction | ThreeFold Docs' },
+  ],
     navbar: {
       title: '',
       logo: {
-        alt: 'Logo',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo.svg', // Use same logo for dark mode
+        alt: 'ThreeFold Logo',
+        src: 'img/new_logo_tft.png',
       },
       items: [
         {
@@ -95,8 +84,13 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://www.mbweniruinsandgardens.com/',
-          label: 'mbweniruinsandgardens',
+          to: '/support',
+          label: 'Support',
+          position: 'left',
+        },
+        {
+          href: 'https://threefold.io',
+          label: 'ThreeFold.io',
           position: 'right',
         },
       ],
@@ -109,61 +103,68 @@ const config: Config = {
           items: [
             {
               label: 'Introduction',
-              to: '/intro',
+              to: '/docs/introduction',
             },
             {
-              label: 'Litepaper',
-              to: '/litepaper',
+              label: 'V3 Manual',
+              href: 'https://manual.grid.tf/',
             },
             {
-              label: 'Roadmap',
-              to: '/roadmap',
+              label: 'V4 Docs',
+              href: 'https://docs.threefold.io/',
             },
-          ],
-        },
-        {
-          title: 'More Info',
-          items: [
-            {
-              label: 'Budget',
-              to: '/budget',
-            },          
           ],
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'Home',
-              to: '/intro',
+              label: 'Telegram',
+              href: 'https://t.me/threefold',
             },
             {
-              label: 'Budget',
-              to: '/budget',
-            },            
+              label: 'X',
+              href: 'https://x.com/threefold_io',
+            },
+            {
+              label: 'Forum',
+              href: 'https://forum.threefold.io',
+            },
+            {
+              label: 'Support',
+              to: '/support',
+            },
           ],
         },
         {
           title: 'Links',
           items: [
             {
-              label: 'mbweniruinsandgardens',
-              href: 'https://www.mbweniruinsandgardens.com/',
+              label: 'ThreeFold.io',
+              href: 'https://threefold.io',
+            },
+            {
+              label: 'Dashboard',
+              href: 'https://dashboard.grid.tf',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/incubaid/',
+              href: 'https://github.com/threefoldtech/home',
+            },
+            {
+              label: 'Gitea',
+              href: 'https://git.ourworld.tf',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Incubaid`,
+      copyright: `Copyright © ${new Date().getFullYear()} ThreeFold`,
     },
     prism: {
-      theme: prismThemes.dracula,
+      theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+  },
 };
 
 export default config;

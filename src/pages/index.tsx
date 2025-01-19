@@ -1,5 +1,6 @@
+import React from 'react';
 import { Redirect } from '@docusaurus/router';
 
-export default function Home(): JSX.Element {
-  return <Redirect to="/intro" />;
+export default function Home() {
+  return <Redirect to="/tftech/docs/introduction" />;
 }

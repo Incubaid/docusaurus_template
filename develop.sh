@@ -7,6 +7,8 @@ cd "${script_dir}"
 
 echo "Docs directory: $script_dir"
 
-export NODE_OPTIONS=--openssl-legacy-provider
+#export NODE_OPTIONS=--openssl-legacy-provider
 
-npm run start -- --host 0.0.0.0
+#npm run start -- --host 0.0.0.0
+
+bun run start -p 3100

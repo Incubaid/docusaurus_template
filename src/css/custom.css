@@ -7,238 +7,125 @@
 /* Ensure navbar items and logo are vertically aligned */
 .navbar__logo {
   display: flex;
-  align-items: center;
-  height: 100%;
+  align-items: center;  /* Center aligns the items vertically */
+  height: 100%;         /* Ensures full height for alignment */
 }
 
 .navbar__logo img {
-  max-width: 150px;
-  height: auto;
+  max-width: 150px;   /* Set maximum width of the logo */
+  height: auto;       /* Maintain aspect ratio */
 }
 
 /* Align navbar items, such as Docs and Support */
 .navbar__item {
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertically align the items */
 }
 
 /* Optional: Adjust padding for navbar items */
 .navbar__link {
-  padding: 8px 12px;
+  padding: 8px 12px;   /* Modify values as necessary for better spacing */
 }
 
 /* Add @font-face declarations for the Inter font */
 @font-face {
   font-family: 'Inter';
-  font-weight: 400;
+  font-weight: 400; /* Light */
   font-style: normal;
-  src: url('/fonts/Inter_28pt-Light.ttf') format('truetype');
+  src: url('/fonts/Inter_28pt-Light.ttf') format('truetype'); /* Corrected path */
 }
 
 @font-face {
   font-family: 'Inter';
-  font-weight: 500;
+  font-weight: 500; /* Regular */
   font-style: normal;
-  src: url('/fonts/Inter_28pt-Regular.ttf') format('truetype');
+  src: url('/fonts/Inter_28pt-Regular.ttf') format('truetype'); /* Corrected path */
 }
 
 @font-face {
   font-family: 'Inter';
-  font-weight: 600;
+  font-weight: 600; /* Medium */
   font-style: normal;
-  src: url('/fonts/Inter_28pt-Medium.ttf') format('truetype');
+  src: url('/fonts/Inter_28pt-Medium.ttf') format('truetype'); /* Corrected path */
 }
 
 /* Apply the Inter font globally */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Set the global font */
   font-size: 18px;
-  background-color: #131213;
-  color: #ffffff;
 }
 
-/* Header styles */
+/* Header styles - Medium weight for headers */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  color: #ffffff;
+  font-weight: 600; /* Medium weight for headers */
+  font-family: 'Inter', sans-serif; /* Set the global font */
 }
 
-/* Paragraph styles */
+/* Paragraph styles - Light weight for paragraphs */
 p {
-  font-weight: 400;
-  font-family: 'Inter', sans-serif;
-  color: #ffffff;
+  font-weight: 400; /* Light weight for paragraphs */
+  font-family: 'Inter', sans-serif; /* Set the global font */
 }
 
-/* Theme variables */
+/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e83ff;
-  --ifm-background-color: #131213;
-  --ifm-navbar-background-color: #131213;
-  --ifm-footer-background-color: #131213;
-  --ifm-color-content: #ffffff;
-  --ifm-menu-color: #ffffff;
-  --ifm-toc-link-color: #ffffff;
-  --ifm-breadcrumb-color-active: #2e83ff;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
+  --svg-fill-color: #2a2021; /* Black fill for light mode */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode styles */
+html[data-theme="dark"] {
+  --svg-fill-color: #fff; /* White fill for dark mode */
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #8d8d8d;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --svg-fill-color: #fff; /* White fill for dark mode */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
-
-/* Dark mode overrides */
-[data-theme='dark'] {
-  --ifm-background-color: #131213;
-  --ifm-navbar-background-color: #131213;
-  --ifm-footer-background-color: #131213;
-  --ifm-color-content: #ffffff;
-  --ifm-menu-color: #ffffff;
-  --ifm-toc-link-color: #ffffff;
-  --ifm-link-color: #2e83ff;
-  --ifm-breadcrumb-color-active: #2e83ff;
-}
-
-/* Layout elements */
 .footer {
   background-color: #131213;
 }
-
 .footer a,
 .footer p,
 .footer span,
 .footer div {
+  color: #ffffff; /* Example: Light gray text for dark mode */
+}
+.navbar {  /* or .navbar--fixedTop if it has that class */
+  background-color: #131213;
+}
+
+/* Apply scroll margin to footnote targets */
+[data-footnote-ref="true"] {
+  scroll-margin-top: 80px; /* Adjust this value to match your navbar height */
+}
+
+/* Ensure navbar items and logo are vertically aligned */
+.navbar__logo {
+  display: flex;
+  align-items: center;  /* Center aligns the items vertically */
+  height: 100%;         /* Ensures full height for alignment */
+}
+
+.navbar__link {  /* Example: for navbar links */
   color: #ffffff;
 }
-
-.navbar {
-  background-color: #131213;
-}
-
-.navbar__link {
-  color: #ffffff;
-}
-
-.menu {
-  background-color: #131213;
-}
-
-.menu__link {
-  color: #ffffff;
-}
-
-.menu__link:hover {
-  color: #2e83ff;
-}
-
-.menu__link--active {
-  color: #2e83ff;
-}
-
-.table-of-contents {
-  background-color: #131213;
-}
-
-.table-of-contents__link {
-  color: #ffffff;
-}
-
-.table-of-contents__link:hover,
-.table-of-contents__link--active {
-  color: #2e83ff;
-}
-
-/* Main content area */
-.main-wrapper {
-  background-color: #131213;
-}
-
-aside.theme-doc-sidebar-container {
-  background-color: #131213;
-  border-right: 1px solid #2a2a2a;
-}
-
-.theme-doc-sidebar-menu {
-  background-color: #131213;
-}
-
-.theme-doc-toc-desktop {
-  background-color: #131213;
-  border-left: 1px solid #2a2a2a;
-}
-
-/* Navigation elements */
-.breadcrumbs__link {
-  color: #ffffff;
-}
-
-.breadcrumbs__link:hover {
-  color: #2e83ff;
-}
-
-/* Search */
-.navbar__search-input {
-  color: #ffffff;
-  background-color: #1a1a1a;
-  border: 1px solid #2a2a2a;
-}
-
-/* Mobile elements */
-.navbar__toggle {
-  color: #ffffff;
-}
-
-.navbar-sidebar {
-  background-color: #131213;
-}
-
-.navbar-sidebar__brand {
-  background-color: #131213;
-}
-
-.navbar-sidebar__items {
-  background-color: #131213;
-}
-
-/* Code blocks */
-.theme-code-block {
-  background-color: #1a1a1a !important;
-}
-
-/* Markdown content */
-.markdown {
-  color: #ffffff;
-}
-
-/* Links */
-.markdown a {
-  color: #2e83ff;
-}
-
-/* Tables */
-.markdown table {
-  border-color: #2a2a2a;
-}
-
-.markdown table tr {
-  background-color: #131213;
-  border-color: #2a2a2a;
-}
-
-.markdown table tr:nth-child(2n) {
-  background-color: #1a1a1a;
-}
-
-.markdown table th,
-.markdown table td {
-  border-color: #2a2a2a;
-}
-
-/* Blockquotes */
-.markdown blockquote {
-  border-left-color: #2e83ff;
-  background-color: #1a1a1a;
-}
-
-/* Horizontal rules */
-.markdown hr {
-  border-color: #2a2a2a;
+img.svg-icon {
+  fill: var(--svg-fill-color); /* Apply the color variable */
 }
