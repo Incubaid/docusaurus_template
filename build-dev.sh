@@ -12,7 +12,7 @@ echo "Docs directory: $script_dir"
 # Change baseUrl to '/tftechdev/'
 sed -i "s|/tftech/|/tftechdev/|g" docusaurus.config.ts ./src/pages/index.tsx
 
-bun build
+bun docusaurus build
 
 rsync -rv --delete ${script_dir}/build/ root@info.ourworld.tf:/root/hero/www/info/tftechdev
 

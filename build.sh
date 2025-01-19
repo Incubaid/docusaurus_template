@@ -9,6 +9,6 @@ export PATH=${BASE}/node_modules/.bin:$PATH
 
 echo "Docs directory: $script_dir"
 
-bun build
+bun docusaurus build
 
 rsync -rv --delete ${script_dir}/build/ root@info.ourworld.tf:/root/hero/www/info/tftech
