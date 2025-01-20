@@ -9,7 +9,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -17,47 +16,39 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out repo
         uses: actions/checkout@v4
-      # Node is required for pnpm
+
+      # Set up Node.js (required for Bun)
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      # Setup pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-          run_install: false
-      # Get pnpm store directory
-      - name: Get pnpm store directory
-        shell: bash
+
+      # Install Bun
+      - name: Install Bun
         run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      # Setup pnpm cache
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-      # Install and build Docusaurus website
+          curl -fsSL https://bun.sh/install | bash
+          echo "BUN_INSTALL=$HOME/.bun/bin" >> $GITHUB_ENV
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      # Install dependencies and build Docusaurus website using Bun
       - name: Build Docusaurus website
         run: |
-          pnpm install
-          pnpm run build
+          bun install
+          bun run build
+
+      # Set up SSH key for deployment
       - name: Set up SSH key
         run: |
-          #set -ex
           mkdir -p ~/.ssh
           echo "${{ secrets.SSHKEY }}" > ~/.ssh/id_rsa
-          #cat ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/id_rsa
           ssh-keyscan -H info.ourworld.tf >> ~/.ssh/known_hosts
           # Test SSH connection
           ssh -o StrictHostKeyChecking=no -T root@info.ourworld.tf || true
+
+      # Deploy with rsync
       - name: Deploy with rsync
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
