@@ -1,14 +1,17 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import navbar from './cfg/navbar.json';
+import footer from './cfg/footer.json';
+import main from './cfg/main.json';
 
 const config: Config = {
-  title: '$TITLE',
-  tagline: '$DESCRIPTION',
-  favicon: 'img/favicon.png',
+  title: main.title,
+  tagline: main.tagline,
+  favicon: main.favicon,
 
-  url: '$URL',
-  baseUrl: '/$NAME/',
+  url: main.url,
+  baseUrl: main.baseUrl,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -57,108 +60,23 @@ const config: Config = {
   ],
 
   themeConfig: {
-
-    colorMode: {
-      defaultMode: 'dark',
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
-    },
-    image: 'img/tf_graph.png',
-  metadata: [
-    { name: 'description', content: '$DESCRIPTION' },
-    { property: 'og:image', content: '$LOGO_URL' },
-    { property: 'og:description', content: '$DESCRIPTION' },
-    { property: 'og:title', content: '$TITLE' },
-  ],
-    navbar: {
-      title: '',
-      logo: {
-        alt: '$NAME Logo',
-        src: 'img/new_logo_tft.png',
+    colorMode: 
+      {
+        "defaultMode": "dark",
+        "disableSwitch": true,
+        "respectPrefersColorScheme": false
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        {
-          to: '/support',
-          label: 'Support',
-          position: 'left',
-        },
-        {
-          href: '$URL',
-          label: '$NAME',
-          position: 'right',
-        },
-      ],
-    },
+    image: main.image,
+    metadata: [
+      { name: 'description', content: main.metadata.description },
+      { property: 'og:image', content: main.metadata.image },
+      { property: 'og:description', content: main.metadata.description },
+      { property: 'og:title', content: main.metadata.title },
+    ],
+    navbar: navbar,
     footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Introduction',
-              to: '/docs/introduction',
-            },
-            {
-              label: 'V3 Manual',
-              href: 'https://manual.grid.tf/',
-            },
-            {
-              label: 'V4 Docs',
-              href: 'https://docs.threefold.io/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Telegram',
-              href: 'https://t.me/threefold',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/threefold_io',
-            },
-            {
-              label: 'Forum',
-              href: 'https://forum.threefold.io',
-            },
-            {
-              label: 'Support',
-              to: '/support',
-            },
-          ],
-        },
-        {
-          title: 'Links',
-          items: [
-            {
-              label: 'ThreeFold.io',
-              href: 'https://threefold.io',
-            },
-            {
-              label: 'Dashboard',
-              href: 'https://dashboard.grid.tf',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/threefoldtech/home',
-            },
-            {
-              label: 'Gitea',
-              href: 'https://git.ourworld.tf',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} ThreeFold`,
+      ...footer,
+      copyright: `Copyright © ${new Date().getFullYear()} Kristof OurWorld.`,
     },
     prism: {
       theme: prismThemes.github,
