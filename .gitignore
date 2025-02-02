@@ -19,5 +19,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 bun.lockb
+bun.lock
 
 yarn.lock
+
+build.sh
+build_dev.sh
+develop.sh
+
+docusaurus.config.ts
+
+sidebars.ts
+
+tsconfig.json
