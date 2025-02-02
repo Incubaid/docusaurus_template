@@ -3,12 +3,12 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'ThreeFold Tech',
-  tagline: 'Self-Healing Data & Cloud Network',
+  title: '$TITLE',
+  tagline: '$DESCRIPTION',
   favicon: 'img/favicon.png',
 
-  url: 'https://threefold.info',
-  baseUrl: '/tftech/',
+  url: '$URL',
+  baseUrl: '/$NAME/',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -65,15 +65,15 @@ const config: Config = {
     },
     image: 'img/tf_graph.png',
   metadata: [
-    { name: 'description', content: 'ThreeFold is laying the foundation for Web4, the next generation of the Internet.' },
-    { property: 'og:image', content: 'https://threefold.info/tftech/img/tf_graph.png' },
-    { property: 'og:description', content: 'ThreeFold is laying the foundation for Web4, the next generation of the Internet.' },
-    { property: 'og:title', content: 'Introduction | ThreeFold Docs' },
+    { name: 'description', content: '$DESCRIPTION' },
+    { property: 'og:image', content: '$LOGO_URL' },
+    { property: 'og:description', content: '$DESCRIPTION' },
+    { property: 'og:title', content: '$TITLE' },
   ],
     navbar: {
       title: '',
       logo: {
-        alt: 'ThreeFold Logo',
+        alt: '$NAME Logo',
         src: 'img/new_logo_tft.png',
       },
       items: [
@@ -89,8 +89,8 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://threefold.io',
-          label: 'ThreeFold.io',
+          href: '$URL',
+          label: '$NAME',
           position: 'right',
         },
       ],
