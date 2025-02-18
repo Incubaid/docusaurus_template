@@ -11,6 +11,6 @@
     "image": "https://threefold.info/kristof/img/tf_graph.png",
     "title": "ThreeFold Technology Vision"
   },
-  "buildDest":"root@info.ourworld.tf:/root/hero/www/info",
-  "buildDestDev":"root@info.ourworld.tf:/root/hero/www/infodev"
+  "buildDest":["root@info.ourworld.tf:/root/hero/www/info"],
+  "buildDestDev":["root@info.ourworld.tf:/root/hero/www/infodev"]
 }
