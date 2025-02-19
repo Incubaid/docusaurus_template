@@ -1,37 +1,27 @@
-<h1>ThreeFold Tech Website</h1>
+<h1>ThreeFold DePIN Board</h1>
 
-<h2>Table of Contents</h2>
 
-- [Introduction](#introduction)
-- [Steps](#steps)
-- [URL](#url)
+to run in development mode
 
----
+```bash
+#first time to get hero
+curl https://raw.githubusercontent.com/freeflowuniverse/herolib/refs/heads/development_kristof10/install_hero.sh > /tmp/install_hero.sh
+bash /tmp/install_hero.sh
+#DONT FORGET TO START A NEW SHELL (otherwise the paths will not be set)
 
-## Introduction
+hero docusaurus -u https://git.ourworld.tf/tfgrid/info_docs_depin -d
+```
 
-This repository contains the code to deploy the ThreeFold Tech website.
+to push
 
-## Steps
+```bash
+hero docusaurus -u https://git.ourworld.tf/tfgrid/info_docs_depin -b
 
-- Install
-    ```
-    bash install.sh
-    ```
-- Run locally
-    ```
-    bash develop.sh
-    ```
-- Push change online to stating website
-    ```
-    bash build-dev.sh
-    ```
-- Push change online to production website
-    ```
-    bash build.sh
-    ```
+#push for development:
+hero docusaurus -u https://git.ourworld.tf/tfgrid/info_docs_depin -bd
+```
 
 ## URL
 
-- The website in staging mode is at `threefold.info/tftechdev`
-- The website in production mode is at `threefold.info/tftech`
+- The production website is available at `https://info.ourworld.tf/depin`
+- The staging website is available at `https://info.ourworld.tf/depindev`
