@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'InterRegular';
+    src: url('data:font/ttf;base64,__FONT_REGULAR__');
+}
+@font-face {
+    font-family: 'InterMedium';
+    src: url('data:font/ttf;base64,__FONT_MEDIUM__');
+}
+@font-face {
+    font-family: 'InterLight';
+    src: url('data:font/ttf;base64,__FONT_LIGHT__');
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    font-family: 'InterRegular', sans-serif;
+    font-size: __FONT_SIZE_NORMAL__pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: __MARGIN_TOP__pt __MARGIN_RIGHT__pt __MARGIN_BOTTOM__pt __MARGIN_LEFT__pt;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.content-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 0 30pt;
+    box-sizing: border-box;
+}
+
+.section {
+    margin-bottom: 1.2em;
+}
+
+p {
+    margin: 0 0 0.8em 0;
+    max-width: 100%;
+}
+
+ol, ul {
+    margin: 0 0 0.8em __LIST_MARGIN__pt;
+    padding: 0;
+    list-style-position: outside;
+}
+
+li {
+    margin-bottom: 0.4em;
+    padding-left: 0.5em;
+}
+
+h1, h2, h3 {
+    font-family: 'InterMedium', sans-serif;
+    break-after: avoid;
+}
+
+h1 { 
+    font-size: __H1_SIZE__pt;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h2 { 
+    font-size: __H2_SIZE__pt;
+    margin-top: 1.3em;
+    margin-bottom: 0.6em;
+}
+
+h3 { 
+    font-size: __H3_SIZE__pt;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h1 + *, h2 + *, h3 + * {
+    break-before: avoid;
+}
+
+p, li {
+    orphans: 3;
+    widows: 3;
+}
+
+strong { 
+    font-family: 'InterMedium', sans-serif; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: __TABLE_PADDING__pt;
+    text-align: left;
+}
+
+th {
+    font-family: 'InterMedium', sans-serif;
+    font-size: __TABLE_HEADER_SIZE__pt;
+    background-color: #f5f5f5;
+}
+
+td {
+    font-size: __TABLE_CELL_SIZE__pt;
+}
+
+ul, ol {
+    padding-left: __LIST_MARGIN__pt;
+}
+
+blockquote {
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 4px solid #ddd;
+    color: #666;
+}
+
+code {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    /* object-fit: contain; */
+}
+
+.image-container {
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+}
