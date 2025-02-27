@@ -1,4 +1,0 @@
-# Litepaper
-
-
-*Content coming soon*
