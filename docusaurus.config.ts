@@ -80,7 +80,7 @@ const config: Config = {
     navbar: navbar,
     footer: {
       ...footer,
-      copyright: `Copyright © ${new Date().getFullYear()} ${main.copyright}.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${main.copyright}`,
     },
     prism: {
       theme: prismThemes.github,
