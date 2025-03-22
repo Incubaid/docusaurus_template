@@ -58,7 +58,7 @@ function encode(input: string): string {
  * Kroki component for rendering diagrams using Kroki.io
  */
 export const Kroki: React.FC<KrokiProps> = ({ 
-  type, 
+  type = "", 
   format = 'svg', 
   className,
   style,
@@ -68,14 +68,73 @@ export const Kroki: React.FC<KrokiProps> = ({
   // Encode the diagram
   let src = '';
   let error = null;
+
+  const additional = `
+    @startuml
+    !theme bluegray
+    skinparam backgroundColor transparent
+    skinparam shadowing false
+    skinparam componentStyle rectangle
+    
+    skinparam defaultFontColor #CCCCCC
+    skinparam ArrowColor #CCCCCC
+    
+    skinparam package {
+      FontColor #CCCCCC
+      BorderColor #CCCCCC
+      BackgroundColor #111111
+    }
+    skinparam node {
+      FontColor #CCCCCC
+      BorderColor #CCCCCC
+      BackgroundColor #444444
+    }
+    skinparam component {
+      FontColor #CCCCCC
+      BorderColor #CCCCCC
+      BackgroundColor #333333
+    }
+    skinparam entity {
+      FontColor #CCCCCC
+      BorderColor #CCCCCC
+      BackgroundColor #222222
+    }
+    skinparam actor {
+      FontColor #CCCCCC
+    }`;
+    
+  // Process the diagram content
+  let diagramContent = children;
   
+  // If type is empty and we're dealing with PlantUML
+  if (type === "") {
+    // Check if the first line is @startuml and remove it if present
+    if (diagramContent.trim().startsWith('@startuml')) {
+      diagramContent = diagramContent.replace(/^\s*@startuml\s*\n/, '');
+    }
+    
+    // Add the additional styling at the beginning
+    diagramContent = additional + '\n' + diagramContent;
+    
+    // Set type to plantuml since that's what we're using
+    type = "plantuml";
+  }
+
   try {
-    const encoded = encode(children);
+    const encoded = encode(diagramContent);
     src = `https://kroki.io/${type}/${format}/${encoded}`;
   } catch (err) {
     error = `Failed to encode diagram: ${err instanceof Error ? err.message : String(err)}`;
     console.error(error);
   }
+
+  // State for showing/hiding the code block
+  const [showCode, setShowCode] = React.useState(false);
+
+  // Toggle code visibility
+  const toggleCode = () => {
+    setShowCode(!showCode);
+  };
 
   return (
     <div className={className} style={style}>
@@ -84,7 +143,39 @@ export const Kroki: React.FC<KrokiProps> = ({
           {error}
         </div>
       ) : (
-        <img src={src} alt="Kroki diagram" style={{ maxWidth }} />
+        <>
+          <img src={src} alt="Kroki diagram" style={{ maxWidth }} />
+          <div style={{ marginTop: '10px', textAlign: 'right' }}>
+            <button 
+              onClick={toggleCode} 
+              style={{ 
+                background: 'none', 
+                border: '1px solid #ccc', 
+                borderRadius: '4px', 
+                padding: '4px 8px', 
+                cursor: 'pointer',
+                fontSize: '12px',
+                color: '#666'
+              }}
+            >
+              {showCode ? 'Hide Code' : 'Show Code'}
+            </button>
+          </div>
+          {showCode && (
+            <pre style={{ 
+              marginTop: '10px', 
+              padding: '10px', 
+              backgroundColor: '#f5f5f5', 
+              border: '1px solid #ddd', 
+              borderRadius: '4px',
+              overflow: 'auto',
+              fontSize: '12px',
+              lineHeight: 1.4
+            }}>
+              <code>{diagramContent}</code>
+            </pre>
+          )}
+        </>
       )}
     </div>
   );

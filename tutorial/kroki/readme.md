@@ -101,6 +101,55 @@ Validator --> Blockchain : Update reputation
 \`\`\`
 ```
 
+## short cut to plantuml
+
+Without specifying paramters it will add template prefix to the content in <kroki>, it will add a theme and some skinparams ...
+
+```mdx
+
+import { Kroki } from '@site/src/components/Kroki';
+
+<Kroki>
+{`
+actor User
+package "Secure Sandbox (User-side)" {
+  component QSFS as "QSFS"
+  component ZeroStor as "Zero-STOR"
+}
+
+package "Farmer Nodes" {
+  node Node1 as "Node A (Zero-OS)" {
+    component ZDB1 as "ZDB A"
+  }
+  node Node2 as "Node B (Zero-OS)" {
+    component ZDB2 as "ZDB B"
+  }
+  node Node3 as "Node C (Zero-OS)" {
+    component ZDB3 as "ZDB C"
+  }
+}
+
+entity Blockchain
+entity Validator
+
+User --> QSFS : Request to store/retrieve file
+QSFS --> ZeroStor : Read/write fragments
+
+ZeroStor --> ZDB1 : Store/verify fragment
+ZeroStor --> ZDB2 : Store/verify fragment
+ZeroStor --> ZDB3 : Store/verify fragment
+
+ZeroStor --> Blockchain : Report storage proofs
+Validator --> Blockchain : Trigger audits
+Validator --> ZDB1 : Run audit workloads
+Validator --> Blockchain : Update reputation
+
+@enduml
+
+`}
+</Kroki>
+```
+
 ## a nice architecture one using .mdx
 
 make sure file name ends with .mdx
