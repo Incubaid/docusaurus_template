@@ -1,0 +1,39 @@
+---
+title: Draw3
+sidebar_position: 3
+---
+import { Kroki } from '@site/src/components/Kroki';
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+
+<div style={{ width: "300px" }}>
+
+<Kroki type="rackdiag" >
+{`
+rackdiag {
+  16U;
+  1: UPS [2U];
+  3: DB Server;
+  4: Web Server;
+  5: Web Server;
+  6: Web Server;
+  7: Load Balancer;
+  8: L3 Switch;
+}
+`}
+</Kroki>
+
+</div>
+
+<div style={{ flex: '1' }}> 
+
+This rack setup represents a typical web infrastructure layout. 
+
+- The **UPS** unit ensures power reliability. 
+- The **DB Server** handles all data storage and queries. 
+- Multiple **Web Servers** provide load-balanced services. - A **Load Balancer** manages traffic across servers. 
+- An **L3 Switch** connects everything together with VLANs and routing. 
+
+</div> 
+
+</div>
