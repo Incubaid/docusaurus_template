@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import navbar from './cfg/navbar.json';
 import footer from './cfg/footer.json';
 import main from './cfg/main.json';
+import { remarkKroki } from 'remark-kroki';
 
 const config: Config = {
   title: main.title,
@@ -27,6 +28,15 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [
+            [
+              remarkKroki,
+              {
+                alias: ['plantuml'],
+                target: 'mdx3'
+              }
+            ]
+          ],
         },
         blog: {
           showReadingTime: true,
