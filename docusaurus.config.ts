@@ -33,7 +33,8 @@ const config: Config = {
               remarkKroki,
               {
                 alias: ['plantuml'],
-                target: 'mdx3'
+                target: 'mdx3',
+                server: 'https://kroki.io'
               }
             ]
           ],
