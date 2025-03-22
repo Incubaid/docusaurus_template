@@ -4,6 +4,20 @@ editor can be used at
 
 https://niolesk.top/#https://kroki.io/rackdiag/svg/eNorSkzOTslMTFeo5lJQMDQLtQZRVgqhAcEK0UahsSCusZWCi5NCcGpRWWoRiG9ipRCemoQkYIouYIYuYG6l4JOfmKLglJiTmJcMEbMAihkrBJdnliRnWHPVAgDhXSWB
 
+## remarks
+
+to upgrade
+
+```bash
+rm -rf ~/hero/var/docusaurus
+```
+
+run  as usual in right directory
+
+```bash
+hero docusaurus -d
+```
+
 ## in a markdown
 
 Not much flexibility in using in html tags (e.g. no multi columns, no maxwidth)
