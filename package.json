@@ -19,14 +19,17 @@
     "@docusaurus/preset-classic": "^3.7.0",
     "@docusaurus/theme-mermaid": "^3.7.0",
     "@mdx-js/react": "^3.0.0",
+    "buffer": "^6.0.3",
     "chart.js": "^4.4.7",
     "clsx": "^2.0.0",
     "echarts": "^5.6.0",
+    "pako": "^2.1.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^18.2.0",
-    "remark-kroki": "^0.3.7"
+    "remark-kroki": "^0.3.7",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
