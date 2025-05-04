@@ -128,14 +128,6 @@ export const Kroki: React.FC<KrokiProps> = ({
     console.error(error);
   }
 
-  // State for showing/hiding the code block
-  const [showCode, setShowCode] = React.useState(false);
-
-  // Toggle code visibility
-  const toggleCode = () => {
-    setShowCode(!showCode);
-  };
-
   return (
     <div className={className} style={style}>
       {error ? (
@@ -143,39 +135,7 @@ export const Kroki: React.FC<KrokiProps> = ({
           {error}
         </div>
       ) : (
-        <>
-          <img src={src} alt="Kroki diagram" style={{ maxWidth }} />
-          <div style={{ marginTop: '10px', textAlign: 'right' }}>
-            <button 
-              onClick={toggleCode} 
-              style={{ 
-                background: 'none', 
-                border: '1px solid #ccc', 
-                borderRadius: '4px', 
-                padding: '4px 8px', 
-                cursor: 'pointer',
-                fontSize: '12px',
-                color: '#666'
-              }}
-            >
-              {showCode ? 'Hide Code' : 'Show Code'}
-            </button>
-          </div>
-          {showCode && (
-            <pre style={{ 
-              marginTop: '10px', 
-              padding: '10px', 
-              backgroundColor: '#f5f5f5', 
-              border: '1px solid #ddd', 
-              borderRadius: '4px',
-              overflow: 'auto',
-              fontSize: '12px',
-              lineHeight: 1.4
-            }}>
-              <code>{diagramContent}</code>
-            </pre>
-          )}
-        </>
+        <img src={src} alt="Kroki diagram" style={{ maxWidth }} />
       )}
     </div>
   );
