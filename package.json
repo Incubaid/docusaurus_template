@@ -29,8 +29,7 @@
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^18.2.0",
     "remark-kroki": "^0.3.7",
-    "zlib": "^1.0.5",
-    "echarts": "^5.5.0"
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
