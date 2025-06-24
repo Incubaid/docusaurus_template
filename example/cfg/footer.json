@@ -1,0 +1,19 @@
+{
+  "style": "dark",
+  "links": [
+    {
+      "title": "Docs",
+      "items": [
+        {
+          "label": "Introduction",
+          "to": "/docs/introduction"
+        },
+        {
+          "label": "Manual",
+          "href": "https://manual.grid.tf/"
+        }
+      ]
+    }
+   
+  ]
+}

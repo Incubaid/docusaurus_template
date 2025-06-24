@@ -1,0 +1,15 @@
+{
+  "title": "ThreeFold DePIN",
+  "tagline": "ThreeFold DePIN",
+  "favicon": "img/favicon.png",
+  "url": "https://docs.threefold.io",
+  "url_home": "docs/introduction",
+  "baseUrl": "/",
+  "image": "img/tf_graph.png",
+  "metadata": {
+    "description": "Internet Infrastructur for Everyone by Everyone, Everywhere.",
+    "image": "https://threefold.info/tfgrid4/img/tf_graph.png",
+    "title": "ThreeFold DePIN"
+  },
+  "copyright": "ThreeFold"
+}

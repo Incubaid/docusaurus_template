@@ -1,0 +1,25 @@
+{
+  "title": "",
+  "logo": {
+    "alt": "ThreeFold Logo",
+    "src": "img/logo.svg",
+    "srcDark": "img/new_logo_tft.png"
+  },
+  "items": [
+    {
+      "href": "https://threefold.io",
+      "label": "ThreeFold.io",
+      "position": "right"
+    },
+    {
+      "href": "https://mycelium.threefold.io/",
+      "label": "Mycelium Network",
+      "position": "right"
+    },
+    {
+      "href": "https://aibox.threefold.io/",
+      "label": "AI Box",
+      "position": "right"
+    }
+  ]
+}
