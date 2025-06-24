@@ -1,5 +1,5 @@
 ---
-title: Draw3
+title: PlantUML Example
 sidebar_position: 3
 ---
 

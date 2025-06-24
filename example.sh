@@ -70,14 +70,14 @@ bun install
 debug_print "bun install completed"
 
 # Execute build.sh
-debug_print "Executing build.sh"
-if [ -f "./build.sh" ]; then
-    ./build.sh
-    debug_print "build.sh execution completed"
-else
-    error_print "build.sh not found in current directory"
-    exit 1
-fi
+# debug_print "Executing build.sh"
+# if [ -f "./build.sh" ]; then
+#     ./build.sh
+#     debug_print "build.sh execution completed"
+# else
+#     error_print "build.sh not found in current directory"
+#     exit 1
+# fi
 
 # Execute develop.sh
 debug_print "Executing develop.sh"
