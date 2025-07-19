@@ -75,7 +75,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    colorMode: 
+    colorMode:
       {
         "defaultMode": "dark",
         "disableSwitch": true,
@@ -96,6 +96,16 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 3,
     },
   },
 };
