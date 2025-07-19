@@ -23,12 +23,3 @@ bun.lock
 
 yarn.lock
 
-build.sh
-build_dev.sh
-develop.sh
-
-docusaurus.config.ts
-
-sidebars.ts
-
-tsconfig.json
