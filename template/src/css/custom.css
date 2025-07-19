@@ -56,6 +56,30 @@ body {
 }
 
 /* Header styles - Medium weight for headers */
+h1 {
+  font-size: 2rem; /* Adjusted font size for H1 */
+}
+
+h2 {
+  font-size: 1.7rem; /* Adjusted font size for H2 */
+}
+
+h3 {
+  font-size: 1.5rem; /* Adjusted font size for H3 */
+}
+
+h4 {
+  font-size: 1.3rem; /* Adjusted font size for H4 */
+}
+
+h5 {
+  font-size: 1.1rem; /* Adjusted font size for H5 */
+}
+
+h6 {
+  font-size: 0.9rem; /* Adjusted font size for H6 */
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600; /* Medium weight for headers */
   font-family: 'Inter', sans-serif; /* Set the global font */
