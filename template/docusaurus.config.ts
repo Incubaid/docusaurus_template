@@ -63,10 +63,10 @@ const config: Config = {
 
   scripts: [
     {
-      src:
-        '/js/crisp.js',
-      async: false,
-    },
+    //   src:
+    //     '/js/crisp.js',
+    //   async: false,
+    // },
     {
       src:
         'https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js',
