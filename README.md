@@ -9,3 +9,6 @@ run example.sh to test the template based on the example.
 - optionally copy other static files to the build location
 
 
+
+
+<!-- Security scan triggered at 2025-09-02 01:58:25 -->
