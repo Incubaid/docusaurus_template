@@ -121,7 +121,7 @@ p {
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e83ff;
+  --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -142,7 +142,7 @@ html[data-theme="dark"] {
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #8d8d8d;
+  --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -154,20 +154,19 @@ html[data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.footer {
+/* Footer and navbar will use theme defaults */
+[data-theme='dark'] .footer {
   background-color: #131213;
 }
 
-.footer a,
-.footer p,
-.footer span,
-.footer div {
+[data-theme='dark'] .footer a,
+[data-theme='dark'] .footer p,
+[data-theme='dark'] .footer span,
+[data-theme='dark'] .footer div {
   color: #ffffff;
-  /* Example: Light gray text for dark mode */
 }
 
-.navbar {
-  /* or .navbar--fixedTop if it has that class */
+[data-theme='dark'] .navbar {
   background-color: #131213;
 }
 
@@ -186,8 +185,8 @@ html[data-theme="dark"] {
   /* Ensures full height for alignment */
 }
 
-.navbar__link {
-  /* Example: for navbar links */
+[data-theme='dark'] .navbar__link {
+  /* White links in dark mode */
   color: #ffffff;
 }
 
