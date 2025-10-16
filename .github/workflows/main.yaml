@@ -9,6 +9,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -17,27 +18,32 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      # Set up Node.js (required for Bun)
+      # Node is required for Bun
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      # Install Bun
+      # Install Bun (matching what herolib uses)
       - name: Install Bun
         run: |
           curl -fsSL https://bun.sh/install | bash
           echo "BUN_INSTALL=$HOME/.bun/bin" >> $GITHUB_ENV
           echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
-      # Install dependencies and build Docusaurus website using Bun
+      # Copy example files to template for demo build
+      - name: Prepare demo site
+        run: |
+          cp -r example/cfg template/
+          cp -r example/docs template/
+
+      # Install and build Docusaurus website using Bun
       - name: Build Docusaurus website
         run: |
           cd template
           bun install
           bun run build
 
-      # Set up SSH key for deployment
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
@@ -49,7 +55,6 @@ jobs:
           # Test SSH connection
           ssh -o StrictHostKeyChecking=no -T root@info.ourworld.tf || true
 
-      # Deploy with rsync
       - name: Deploy with rsync
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./template/build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
