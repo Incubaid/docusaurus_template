@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import navbar from './cfg/navbar.json';
 import footer from './cfg/footer.json';
 import main from './cfg/main.json';
+import announcement from './cfg/announcement.json';
 import { remarkKroki } from 'remark-kroki';
 
 // Mermaid theme support
@@ -98,6 +99,16 @@ const config: Config = {
       ...footer,
       copyright: `Copyright © ${new Date().getFullYear()} ${main.copyright}`,
     },
+    // Only include announcementBar if content is not empty
+    ...(announcement.content && {
+      announcementBar: {
+        id: announcement.id,
+        content: announcement.content,
+        backgroundColor: announcement.backgroundColor,
+        textColor: announcement.textColor,
+        isCloseable: announcement.isCloseable,
+      },
+    }),
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
