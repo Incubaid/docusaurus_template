@@ -33,6 +33,7 @@ jobs:
       # Install dependencies and build Docusaurus website using Bun
       - name: Build Docusaurus website
         run: |
+          cd template
           bun install
           bun run build
 
@@ -51,4 +52,4 @@ jobs:
       # Deploy with rsync
       - name: Deploy with rsync
         run: |
-          rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./template/build/ root@info.ourworld.tf:/root/hero/www/info/testdocs/

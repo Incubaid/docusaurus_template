@@ -83,7 +83,7 @@ const config: Config = {
     colorMode:
     {
       "defaultMode": "dark",
-      "disableSwitch": true,
+      "disableSwitch": false,
       "respectPrefersColorScheme": false
     },
     image: main.image,
