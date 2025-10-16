@@ -7,88 +7,116 @@
 /* Ensure navbar items and logo are vertically aligned */
 .navbar__logo {
   display: flex;
-  align-items: center;  /* Center aligns the items vertically */
-  height: 100%;         /* Ensures full height for alignment */
+  align-items: center;
+  /* Center aligns the items vertically */
+  height: 100%;
+  /* Ensures full height for alignment */
 }
 
 .navbar__logo img {
-  max-width: 150px;   /* Set maximum width of the logo */
-  height: auto;       /* Maintain aspect ratio */
+  max-width: 150px;
+  /* Set maximum width of the logo */
+  height: auto;
+  /* Maintain aspect ratio */
 }
 
 /* Align navbar items, such as Docs and Support */
 .navbar__item {
   display: flex;
-  align-items: center; /* Vertically align the items */
+  align-items: center;
+  /* Vertically align the items */
 }
 
 /* Optional: Adjust padding for navbar items */
 .navbar__link {
-  padding: 8px 12px;   /* Modify values as necessary for better spacing */
+  padding: 8px 12px;
+  /* Modify values as necessary for better spacing */
 }
 
 /* Add @font-face declarations for the Inter font */
 @font-face {
   font-family: 'Inter';
-  font-weight: 400; /* Light */
+  font-weight: 400;
+  /* Light */
   font-style: normal;
-  src: url('/fonts/Inter_28pt-Light.ttf') format('truetype'); /* Corrected path */
+  src: url('/fonts/Inter_28pt-Light.ttf') format('truetype');
+  /* Corrected path */
 }
 
 @font-face {
   font-family: 'Inter';
-  font-weight: 500; /* Regular */
+  font-weight: 500;
+  /* Regular */
   font-style: normal;
-  src: url('/fonts/Inter_28pt-Regular.ttf') format('truetype'); /* Corrected path */
+  src: url('/fonts/Inter_28pt-Regular.ttf') format('truetype');
+  /* Corrected path */
 }
 
 @font-face {
   font-family: 'Inter';
-  font-weight: 600; /* Medium */
+  font-weight: 600;
+  /* Medium */
   font-style: normal;
-  src: url('/fonts/Inter_28pt-Medium.ttf') format('truetype'); /* Corrected path */
+  src: url('/fonts/Inter_28pt-Medium.ttf') format('truetype');
+  /* Corrected path */
 }
 
 /* Apply the Inter font globally */
 body {
-  font-family: 'Inter', sans-serif; /* Set the global font */
+  font-family: 'Inter', sans-serif;
+  /* Set the global font */
   font-size: 18px;
 }
 
 /* Header styles - Medium weight for headers */
 h1 {
-  font-size: 2.5rem; /* Adjusted font size for H1 */
+  font-size: 2.5rem;
+  /* Adjusted font size for H1 */
 }
 
 h2 {
-  font-size: 2rem; /* Adjusted font size for H2 */
+  font-size: 2rem;
+  /* Adjusted font size for H2 */
 }
 
 h3 {
-  font-size: 1.7rem; /* Adjusted font size for H3 */
+  font-size: 1.7rem;
+  /* Adjusted font size for H3 */
 }
 
 h4 {
-  font-size: 1.5rem; /* Adjusted font size for H4 */
+  font-size: 1.5rem;
+  /* Adjusted font size for H4 */
 }
 
 h5 {
-  font-size: 1.3rem; /* Adjusted font size for H5 */
+  font-size: 1.3rem;
+  /* Adjusted font size for H5 */
 }
 
 h6 {
-  font-size: 1rem; /* Adjusted font size for H6 */
+  font-size: 1rem;
+  /* Adjusted font size for H6 */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600; /* Medium weight for headers */
-  font-family: 'Inter', sans-serif; /* Set the global font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  /* Medium weight for headers */
+  font-family: 'Inter', sans-serif;
+  /* Set the global font */
 }
 
 /* Paragraph styles - Light weight for paragraphs */
 p {
-  font-weight: 400; /* Light weight for paragraphs */
-  font-family: 'Inter', sans-serif; /* Set the global font */
+  font-weight: 400;
+  /* Light weight for paragraphs */
+  font-family: 'Inter', sans-serif;
+  /* Set the global font */
 }
 
 /* You can override the default Infima variables here. */
@@ -101,13 +129,15 @@ p {
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --svg-fill-color: #2a2021; /* Black fill for light mode */
+  --svg-fill-color: #2a2021;
+  /* Black fill for light mode */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* Dark mode styles */
 html[data-theme="dark"] {
-  --svg-fill-color: #fff; /* White fill for dark mode */
+  --svg-fill-color: #fff;
+  /* White fill for dark mode */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -119,37 +149,126 @@ html[data-theme="dark"] {
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --svg-fill-color: #fff; /* White fill for dark mode */
+  --svg-fill-color: #fff;
+  /* White fill for dark mode */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
 .footer {
   background-color: #131213;
 }
+
 .footer a,
 .footer p,
 .footer span,
 .footer div {
-  color: #ffffff; /* Example: Light gray text for dark mode */
+  color: #ffffff;
+  /* Example: Light gray text for dark mode */
 }
-.navbar {  /* or .navbar--fixedTop if it has that class */
+
+.navbar {
+  /* or .navbar--fixedTop if it has that class */
   background-color: #131213;
 }
 
 /* Apply scroll margin to footnote targets */
 [data-footnote-ref="true"] {
-  scroll-margin-top: 80px; /* Adjust this value to match your navbar height */
+  scroll-margin-top: 80px;
+  /* Adjust this value to match your navbar height */
 }
 
 /* Ensure navbar items and logo are vertically aligned */
 .navbar__logo {
   display: flex;
-  align-items: center;  /* Center aligns the items vertically */
-  height: 100%;         /* Ensures full height for alignment */
+  align-items: center;
+  /* Center aligns the items vertically */
+  height: 100%;
+  /* Ensures full height for alignment */
 }
 
-.navbar__link {  /* Example: for navbar links */
+.navbar__link {
+  /* Example: for navbar links */
   color: #ffffff;
 }
+
 img.svg-icon {
-  fill: var(--svg-fill-color); /* Apply the color variable */
+  fill: var(--svg-fill-color);
+  /* Apply the color variable */
+}
+
+/* Custom styles for feedback callouts */
+.feedback-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  color: white;
+}
+
+.feedback-box h2 {
+  color: white;
+  margin-top: 0;
+}
+
+.feedback-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.feedback-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.feedback-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* Open questions styling */
+.open-questions {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+}
+
+[data-theme='dark'] .open-questions {
+  background: #3d3416;
+  border-left-color: #ffca28;
+}
+
+.open-questions h3 {
+  margin-top: 0;
+  color: #856404;
+}
+
+[data-theme='dark'] .open-questions h3 {
+  color: #ffd54f;
+}
+
+.open-questions ul {
+  margin-bottom: 0;
+}
+
+/* Table improvements */
+table {
+  display: table;
+  width: 100%;
+}
+
+/* Code block improvements */
+pre {
+  border-radius: 8px;
 }

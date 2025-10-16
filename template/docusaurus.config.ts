@@ -1,10 +1,18 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import navbar from './cfg/navbar.json';
 import footer from './cfg/footer.json';
 import main from './cfg/main.json';
 import { remarkKroki } from 'remark-kroki';
+
+// Mermaid theme support
+const mermaidTheme = {
+  theme: {
+    light: 'default',
+    dark: 'dark',
+  },
+};
 
 const config: Config = {
   title: main.title,
@@ -15,7 +23,6 @@ const config: Config = {
   baseUrl: main.baseUrl,
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -58,6 +65,9 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
   themes: ['@docusaurus/theme-mermaid'],
 
@@ -71,11 +81,11 @@ const config: Config = {
 
   themeConfig: {
     colorMode:
-      {
-        "defaultMode": "dark",
-        "disableSwitch": true,
-        "respectPrefersColorScheme": false
-      },
+    {
+      "defaultMode": "dark",
+      "disableSwitch": true,
+      "respectPrefersColorScheme": false
+    },
     image: main.image,
     metadata: [
       { name: 'description', content: main.metadata.description },
@@ -92,6 +102,7 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    mermaid: mermaidTheme,
     docs: {
       sidebar: {
         hideable: true,
