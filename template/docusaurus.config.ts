@@ -4,8 +4,19 @@ import type * as Preset from '@docusaurus/preset-classic';
 import navbar from './cfg/navbar.json';
 import footer from './cfg/footer.json';
 import main from './cfg/main.json';
-import announcement from './cfg/announcement.json';
 import { remarkKroki } from 'remark-kroki';
+import { readFileSync, existsSync } from 'fs';
+
+// Try to load announcement.json if it exists
+let announcement: any = { content: '' };
+try {
+  if (existsSync('./cfg/announcement.json')) {
+    const announcementData = readFileSync('./cfg/announcement.json', 'utf-8');
+    announcement = JSON.parse(announcementData);
+  }
+} catch (e) {
+  // Announcement file doesn't exist, use default empty content
+}
 
 // Mermaid theme support
 const mermaidTheme = {
