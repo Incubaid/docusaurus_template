@@ -273,20 +273,6 @@ pre {
 }
 
 /* Announcement bar styling */
-div[class*='announcementBar'] {
-  background-color: var(--ifm-color-primary);
-  color: white;
-}
-
-div[class*='announcementBar'] a {
-  color: white;
-  text-decoration: underline;
-}
-
-div[class*='announcementBar'] a:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-
 /* Style the close button */
 div[class*='announcementBar'] button[class*='close'] {
   color: white;
