@@ -33,7 +33,7 @@ const config: Config = {
 
   url: main.url,
   baseUrl: main.baseUrl,
-  trailingSlash: false,
+  trailingSlash: true,
 
   onBrokenLinks: 'throw',
 
