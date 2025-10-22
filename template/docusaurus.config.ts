@@ -32,7 +32,7 @@ const config: Config = {
   favicon: main.favicon,
 
   url: main.url,
-  baseUrl: main.baseUrl + main.url_home,
+  baseUrl: main.baseUrl,
   // trailingSlash: false,
 
   onBrokenLinks: 'throw',
